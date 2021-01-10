@@ -1,9 +1,14 @@
 import UserList from './UserList'
+import { Container, Row } from 'react-bootstrap'
 
 function App() {
   return (
     <>
-      <UserList />
+      <Container>
+        <Row>
+          <UserList />
+        </Row>
+      </Container>
     </>
   )
 }

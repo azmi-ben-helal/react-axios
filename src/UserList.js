@@ -6,17 +6,12 @@ const UserList = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    function fetchData() {
-      axios
-        .get('https://jsonplaceholder.typicode.com/users')
-        .then(function (response) {
-          setData(response.data)
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
+    const fetchData = async () => {
+      const response = await axios.get(
+        'https://jsonplaceholder.typicode.com/users',
+      )
+      setData(response.data)
     }
-
     fetchData()
   }, [])
 

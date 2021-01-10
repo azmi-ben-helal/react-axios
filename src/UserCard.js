@@ -1,24 +1,17 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 
 const UserCard = (props) => {
+  console.log(props.user)
   return (
     <>
-      <div className="user-card">
-        <div className="user-card card">
-          <div className="card-body">
-            <h4 className="card-title">{props.user.name}</h4>
-
-            <p className="text-justify" style={{ fontSize: '14px' }}>
-              {props.user.username}
-            </p>
-          </div>
-          <div className="card-footer">
-            <div className="clearfix">
-              <div className="float-left mt-1">{props.user.email}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Card border="danger" style={{ width: '18rem' }}>
+        <Card.Header>Name : {props.user.name}</Card.Header>
+        <Card.Body>
+          <Card.Title>Username : {props.user.username}</Card.Title>
+          <Card.Text> Email : {props.user.email}</Card.Text>
+        </Card.Body>
+      </Card>
     </>
   )
 }
